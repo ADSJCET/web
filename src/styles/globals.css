@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;300;500;600;700;800;900&family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;1,500;1,700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -136,6 +138,10 @@ body {
   font-family: "Cal Sans";
 }
 
+h2, p {
+  font-family: 'Poppins', sans-serif;
+}
+
  
 @layer base {
   * {
@@ -151,7 +157,7 @@ h1 {
 }
 
 h2 {
-  @apply scroll-m-20 pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0;
+  @apply scroll-m-20 pb-2 text-3xl text-white/90 font-medium tracking-tight transition-colors first:mt-0;
   
 }
 h3 {
@@ -217,13 +223,14 @@ h6 {
   .aboutDiv8 { grid-area: 5 / 3 / 6 / 4; }
   .aboutDiv9 { grid-area: 4 / 4 / 6 / 5; } 
   
-  .example-container {
+  .slider-container {
     width: 100vw;
-    height: 100vh;
+    height: 80vh;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
+
   }
   
   .next,
@@ -253,12 +260,6 @@ h6 {
     transform: scale(-1);
   }
   
-  img {
-    position: absolute;
-    max-width: 60vw;
-    max-height: 600px;
-    @apply rounded-md;
-  }
   
   .refresh {
     padding: 10px;
@@ -274,7 +275,6 @@ h6 {
     align-items: center;
     cursor: pointer;
   }
-=======
 
   .parallax {
     overflow: hidden;
@@ -326,4 +326,26 @@ h6 {
             top: -75%;
         }
     }
+}
+
+
+.text-container {
+  position: relative;
+  overflow: hidden;
+  display: block;
+}
+
+.highlighted-text:before {
+  content: attr(data-text);
+  display: inline-block;
+  opacity: 0.8;
+}
+
+.highlighted-text {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  z-index: 0;
+  transition: clip-path 0.1s ease;
 }
