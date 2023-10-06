@@ -9,7 +9,7 @@ import { MouseEventHandler, PropsWithChildren } from "react";
 
 import { cn } from "@/lib/utils"
 
-const Card = ({ className, children, ...props }:any) => {
+const Card = ({ className, children,hover, ...props }:any) => {
   const mouseX = useSpring(0, { stiffness: 500, damping: 100 });
 	const mouseY = useSpring(0, { stiffness: 500, damping: 100 });
 
@@ -23,7 +23,7 @@ const Card = ({ className, children, ...props }:any) => {
 
   return (
     <div
-			onMouseMove={onMouseMove}
+			onMouseMove={hover ? ()=>{} : onMouseMove}
       className={cn("overflow-hidden relative duration-700 border rounded-xl hover:bg-zinc-800/10 group md:gap-8 hover:border-zinc-400/50 border-zinc-600 ", className)}
       {...props}
 		>

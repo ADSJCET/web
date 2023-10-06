@@ -145,7 +145,7 @@ h4 {
 }
 
 p {
-  @apply leading-7 [&:not(:first-child)]:mt-6;
+  /* @apply ; */
 }
 
 blockquote {
@@ -183,3 +183,18 @@ h6 {
   font-size: 18px;
   letter-spacing: 0.045em;
 } */
+
+
+.aboutSection {
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  }
+  .aboutDiv1 { grid-area: 1 / 2 / 3 / 4; }
+  .aboutDiv2 { grid-area: 1 / 1 / 3 / 2; }
+  .aboutDiv3 { grid-area: 1 / 4 / 3 / 5; }
+  .aboutDiv4 { grid-area: 3 / 1 / 5 / 3; }
+  .aboutDiv5 { grid-area: 5 / 1 / 6 / 3; }
+  .aboutDiv6 { grid-area: 3 / 3 / 5 / 4; }
+  .aboutDiv7 { grid-area: 3 / 4 / 4 / 5; }
+  .aboutDiv8 { grid-area: 5 / 3 / 6 / 4; }
+  .aboutDiv9 { grid-area: 4 / 4 / 6 / 5; } 
