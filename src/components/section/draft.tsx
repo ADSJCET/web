@@ -24,7 +24,7 @@ const AboutSection = () => {
             and run. 
           </p>
         </Card>
-        <Card hover className="aboutDiv2 flex justify-center items-center hover:bg-none">
+        <Card notHover className="aboutDiv2 flex justify-center items-center hover:bg-none">
           <Image className="invert w-full m-0 p-10" src={'/adsa-small.svg'} alt="adsa logo" width={'100'} height={"100"}/>
         </Card>
         <Card className="aboutDiv3 ">
