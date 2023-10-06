@@ -41,7 +41,7 @@ export const Example = () => {
   React.useEffect(() => {
     const interval = setInterval(() => {
       paginate(1); // Move to the next image every 2 seconds
-    }, 2000);
+    }, 3000);
 
     return () => clearInterval(interval);
   }, [page]); // Add 'page' as a dependency to reset the timer when the page changes
