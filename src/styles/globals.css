@@ -139,13 +139,13 @@ body {
 }
 
 h2, p {
-  font-family: 'Poppins', sans-serif;
+  /* font-family: 'Poppins', sans-serif; */
 }
 
  
 @layer base {
   * {
-    @apply border-border;
+    @apply border-border cursor-none;
   }
   body {
     @apply bg-background text-foreground;
@@ -157,7 +157,7 @@ h1 {
 }
 
 h2 {
-  @apply scroll-m-20 pb-2 text-3xl text-white/90 font-medium tracking-tight transition-colors first:mt-0;
+  @apply scroll-m-20 pb-2 text-3xl  font-medium tracking-tight transition-colors first:mt-0;
   
 }
 h3 {
@@ -348,4 +348,14 @@ h6 {
   left: 0;
   z-index: 0;
   transition: clip-path 0.1s ease;
+}
+
+.cursor {
+  @apply bg-rose;
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 1000;
 }
