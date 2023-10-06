@@ -1,5 +1,7 @@
 import * as React from "react"
 import {
+  ForwardRefComponent,
+  HTMLMotionProps,
 	motion,
 	useMotionTemplate,
 	useMotionValue,
@@ -9,7 +11,7 @@ import { MouseEventHandler, PropsWithChildren } from "react";
 
 import { cn } from "@/lib/utils"
 
-const Card = ({ className, children,hover, ...props }:any) => {
+const Card:FC<{framer?:boolean, notHover?:boolean}> = ({ className, children, notHover, framer, ...props }) => {
   const mouseX = useSpring(0, { stiffness: 500, damping: 100 });
 	const mouseY = useSpring(0, { stiffness: 500, damping: 100 });
 
@@ -21,9 +23,11 @@ const Card = ({ className, children,hover, ...props }:any) => {
 	let maskImage = useMotionTemplate`radial-gradient(240px at ${mouseX}px ${mouseY}px, white, transparent)`;
 	let style = { maskImage, WebkitMaskImage: maskImage };
 
+  const Slot = framer ? motion.div : "div"
+
   return (
-    <div
-			onMouseMove={hover ? ()=>{} : onMouseMove}
+    <Slot
+			onMouseMove={notHover ? ()=>{} : onMouseMove}
       className={cn("overflow-hidden relative duration-700 border rounded-xl hover:bg-zinc-800/10 group md:gap-8 hover:border-zinc-400/50 border-zinc-600 ", className)}
       {...props}
 		>
@@ -40,7 +44,7 @@ const Card = ({ className, children,hover, ...props }:any) => {
 			</div>
 
 			{children}
-		</div>
+		</Slot>
   )
 }
 Card.displayName = "Card"
