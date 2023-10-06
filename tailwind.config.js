@@ -26,6 +26,10 @@ module.exports = {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
         },
+        rose: {
+          DEFAULT: "hsl(var(--rose))",
+        //   foreground: "hsl(var(--rose-foreground))",
+        },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
@@ -104,6 +108,30 @@ module.exports = {
 						opacity: "30%",
 					},
 				},
+				"fade-up": {
+					"0%": {
+						transform: "translateY(100%)",
+						opacity: "0%",
+					},
+					"70%": {
+						transform: "translateY(100%)",
+						opacity: "1000%",
+					},
+					"100%": {
+            // transform: "translateY(0%)",
+						opacity: "10%",
+					},
+				},
+				"fade-text-up": {
+					"0%": {
+						// transform: "translateY(100%)",
+						opacity: "0%",
+					},
+					"100%": {
+            // transform: "translateY(0%)",
+						opacity: "100%",
+					},
+				},
 				title: {
 					"0%": {
 						"line-height": "0%",
@@ -127,10 +155,13 @@ module.exports = {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        "fade-in": "fade-in 3s ease-in-out forwards",
+        "fade-in": "fade-in 1.5s ease-in-out forwards",
 				title: "title 3s ease-out forwards",
 				"fade-left": "fade-left 3s ease-in-out forwards",
 				"fade-right": "fade-right 3s ease-in-out forwards",
+				"fade-up": "fade-up 1s ease-in-out forwards",
+				"fade-text-up": "fade-text-up 3s ease-in-out forwards",
+
       },
     },
   },

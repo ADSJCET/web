@@ -1,5 +1,7 @@
 import * as React from "react"
 import {
+  ForwardRefComponent,
+  HTMLMotionProps,
 	motion,
 	useMotionTemplate,
 	useMotionValue,
@@ -9,7 +11,7 @@ import { MouseEventHandler, PropsWithChildren } from "react";
 
 import { cn } from "@/lib/utils"
 
-const Card = ({ className, children,hover, ...props }:any) => {
+const Card:FC<{framer?:boolean, notHover?:boolean}> = ({ className, children, notHover, framer, ...props }) => {
   const mouseX = useSpring(0, { stiffness: 500, damping: 100 });
 	const mouseY = useSpring(0, { stiffness: 500, damping: 100 });
 
@@ -21,16 +23,18 @@ const Card = ({ className, children,hover, ...props }:any) => {
 	let maskImage = useMotionTemplate`radial-gradient(240px at ${mouseX}px ${mouseY}px, white, transparent)`;
 	let style = { maskImage, WebkitMaskImage: maskImage };
 
+  const Slot = framer ? motion.div : "div"
+
   return (
-    <div
-			onMouseMove={hover ? ()=>{} : onMouseMove}
+    <Slot
+			onMouseMove={notHover ? ()=>{} : onMouseMove}
       className={cn("overflow-hidden relative duration-700 border rounded-xl hover:bg-zinc-800/10 group md:gap-8 hover:border-zinc-400/50 border-zinc-600 ", className)}
       {...props}
 		>
 			<div className="pointer-events-none">
 				<div className="absolute inset-0 z-0  transition duration-1000 [mask-image:linear-gradient(black,transparent)]" />
 				<motion.div
-					className="absolute inset-0 z-10  bg-gradient-to-br opacity-100  via-zinc-100/10  transition duration-1000 group-hover:opacity-50 "
+					className="absolute inset-0 z-10  bg-gradient-to-bl opacity-100  via-zinc-100/10  transition duration-1000 group-hover:opacity-50 "
 					style={style}
 				/>
 				<motion.div
@@ -40,7 +44,7 @@ const Card = ({ className, children,hover, ...props }:any) => {
 			</div>
 
 			{children}
-		</div>
+		</Slot>
   )
 }
 Card.displayName = "Card"

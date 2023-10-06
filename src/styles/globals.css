@@ -1,6 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+  @variants responsive {
+    .masonry-3-col {
+      column-count: 3;
+      column-gap: 1em;
+    }
+    .masonry-2-col {
+      column-count: 2;
+      column-gap: 1em;
+    }
+    .break-inside {
+      break-inside: avoid;
+    }
+  }
+}
  
 /* @layer base {
   :root {
@@ -76,6 +92,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 224 71.4% 4.1%;
     --primary: 262.1 83.3% 57.8%;
+    --rose: 333, 100%, 47%;
     --primary-foreground: 210 20% 98%;
     --secondary: 220 14.3% 95.9%;
     --secondary-foreground: 220.9 39.3% 11%;
@@ -99,6 +116,7 @@
     --popover: 224 71.4% 4.1%;
     --popover-foreground: 210 20% 98%;
     --primary: 263.4 70% 50.4%;
+    --rose: 333, 100%, 47%;
     --primary-foreground: 210 20% 98%;
     --secondary: 215 27.9% 16.9%;
     --secondary-foreground: 210 20% 98%;
@@ -133,7 +151,7 @@ h1 {
 }
 
 h2 {
-  @apply scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0;
+  @apply scroll-m-20 pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0;
   
 }
 h3 {
@@ -199,18 +217,6 @@ h6 {
   .aboutDiv8 { grid-area: 5 / 3 / 6 / 4; }
   .aboutDiv9 { grid-area: 4 / 4 / 6 / 5; } 
   
-  body {
-    width: 100vw;
-    height: 100vh;
-    background: #151515;
-    overflow: hidden;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
   .example-container {
     width: 100vw;
     height: 100vh;
@@ -268,3 +274,56 @@ h6 {
     align-items: center;
     cursor: pointer;
   }
+=======
+
+  .parallax {
+    overflow: hidden;
+    letter-spacing: -2px;
+    /* line-height: 0.8; */
+    margin: 0;
+    white-space: nowrap;
+    display: flex;
+    flex-wrap: nowrap;
+  }
+
+  .gallery{
+    height: 175vh;
+    /* background: rgb(45, 45, 45); */
+    position: relative;
+    display: flex;
+    gap: 2vw;
+    padding: 2vw;
+    box-sizing: border-box;
+    overflow: hidden;
+    .column{
+        position: relative;
+        height: 100%;
+        width: 25%;
+        min-width: 250px;
+        display: flex;
+        flex-direction: column;
+        gap: 2vw;
+        .imageContainer{
+            height: 100%;
+            width: 100%;
+            position: relative;
+            border-radius: 1vw;
+            overflow: hidden;
+            img{
+                object-fit: cover;
+            }
+        }
+        &:nth-of-type(1){
+            top: -45%;
+        }
+        &:nth-of-type(2){
+            top: -95%;
+        }
+        &:nth-of-type(3){
+            top: -45%;
+        }
+        &:nth-of-type(4){
+            top: -75%;
+        }
+    }
+}
