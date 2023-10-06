@@ -249,7 +249,8 @@ h6 {
   
   img {
     position: absolute;
-    max-width: 80vw;
+    max-width: 60vw;
+    max-height: 600px;
     @apply rounded-md;
   }
   
