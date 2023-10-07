@@ -46,7 +46,7 @@ const collection = [
 
 const GridSection = () => {
     return ( 
-        <div className="mx-auto h-screen max-w-screen-lg masonry-3-col gap-10 [column-fill:_balance]" data-masonry='{"percentPosition": true }'>
+        <div className="mx-auto h-screen md:masonry-3-col gap-10 [column-fill:_balance]" data-masonry='{"percentPosition": true }'>
             {
                 collection.map((e,i)=> (
                     <Card key={i} className="break-inside-auto mb-6">
