@@ -31,7 +31,7 @@ const ContentLine = ({ content }:{content:string}) => {
 
 export const ScrollText = ({ content }:{content:string[]}) => {
   return (
-    <div className="outer text-center">
+    <div className="text-center">
       <div className="inner">
         <h2>
           {content.map((item) => (

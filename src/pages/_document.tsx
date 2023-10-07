@@ -48,7 +48,7 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head />
-      <body className='min-h-screen bg-gradient-to-tl from-black via-zinc-600/20 to-black'>
+		<body className='min-h-screen w-screen overflow-x-hidden bg-gradient-to-tl from-black via-zinc-600/20 to-black'>
         <Main />
         <NextScript />
       </body>
