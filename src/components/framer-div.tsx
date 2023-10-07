@@ -9,7 +9,7 @@ export const TextDiv = ({className, children, ...props}: HTMLAttributes<HTMLDivE
             transition={{ duration: 1 }}
             whileInView={{opacity:100, y:0}}
             viewport={{ once: true }}
-            className={cn("max-w-screen-lg mx-auto mt-40 text-center", className)}
+            className={cn("max-w-screen-xl mx-auto mt-40 mb-10 text-center", className)}
             // {...props}
             >
                 {children}
