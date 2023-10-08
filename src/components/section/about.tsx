@@ -1,22 +1,26 @@
-import { TextDiv } from "@/components/framer-div";
+import { AT, TextDiv } from "@/components/framer-div";
 import Image from "next/image";
 import { useEffect } from "react";
 import { ScrollText } from "../scroll-text-read";
+import { CursorController } from "@/lib/cursor-control";
+import { Space10, Space40 } from "../ui/spacer";
 
 const content1 = [
-  "AI and DS, distinct yet complementary, AI simulates human intelligence in machines, ",
-  "while DS extracts insights from data. Together, they form an interdisciplinary field ",
-  "spanning engineering, statistics, and more. Students learn to design AI and DS ",
-  "solutions for real-world challenges, including machine learning, data visualization, blockchain, and data security. ",
-  "Hence making this program ideal for promising candidates who could develop ",
+  "AI and DS, distinct yet complementary, AI simulates human intelligence",
+  "in machines,  while DS extracts insights from data. Together, ",
+  "they form an interdisciplinary field spanning engineering, ",
+  "statistics, and more. Students learn to design AI and DS ",
+  "solutions for real-world challenges, including machine learning,",
+  "data visualization, blockchain, and data security. Hence making",
+  "this program ideal for promising candidates who could develop ",
   "smart solutions in the era of big data, impacting various fields of humanity",
 ];
 
 const content2 = [
   "Students in this",
   "field learn how to design and implement AI and DS-based solutions for",
-  "engineering and business problems, including machine learning, data",
-  "visualization, semantic web and social network analytics, blockchain",
+  "engineering and business problems, including machine learning, ",
+  "data visualization, semantic web and social network analytics, blockchain",
   "technologies, and data security and privacy. Big data solutions have",
   "changed the way in which business models are built and run.",
 ];
@@ -29,28 +33,31 @@ const content3 = [
 "along with highly qualified and experienced faculty team.",
 ];
 
-const AboutSection = ({onMouseEnter,onMouseLeave}:CursorFrameProps) => {
+const AboutSection = () => {
+  const {setDefault, setText} = CursorController()
   return (
   <>
         <TextDiv>
-          <h1 className="text-7xl" onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}> About AI & DS </h1>
+          <AT type="h1" onMouseEnter={setText} onMouseLeave={setDefault}> About AI & DS </AT>
           <h3> Artificial Intelligence & Data Science </h3>
         </TextDiv>
-
-        <TextDiv className="mt-10">
+        <Space10/>
+        <TextDiv>
           <ScrollText content={content1} />
         </TextDiv>
 
-        <TextDiv className="my-10">
+        <Space10/>
+        <TextDiv>
           <ScrollText content={content2} />
         </TextDiv>
 
+        <Space40/>
         <TextDiv>
-          <h1 className="text-7xl" onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>About ADSA</h1>
+          <AT type="h1" onMouseEnter={setText} onMouseLeave={setDefault}>About ADSA</AT>
           <h3>Artificial Intelligence & Data Science Students Association</h3>
         </TextDiv>
 
-        <TextDiv className="mt-10">
+        <TextDiv>
           <ScrollText content={content3} />
         </TextDiv>
     </>

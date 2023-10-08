@@ -11,15 +11,10 @@ const arrow = {
   hover: { rotate: 360, transition: { duration: 0.4 } }
 };
 
-interface RefreshProps {
-  onClick: (event: React.MouseEvent) => void;
-}
-
-export const Refresh: React.FC<RefreshProps> = ({ onClick }) => {
+export const Refresh: FC = ({  }) => {
   return (
     <motion.div
       className="refresh"
-      onClick={onClick}
       variants={button}
       initial="rest"
       whileHover="hover"

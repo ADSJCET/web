@@ -1,7 +1,6 @@
 import { Metadata } from 'next';
 import { Html, Head, Main, NextScript } from 'next/document'
 
-
 export const metadata: Metadata = {
 	title: {
 		default: "",
@@ -44,13 +43,15 @@ export const metadata: Metadata = {
 	},
 };
 
+
+
 export default function Document() {
   return (
     <Html lang="en">
       <Head />
 		<body className='min-h-screen w-screen overflow-x-hidden bg-gradient-to-tl from-black via-zinc-600/20 to-black'>
         <Main />
-        <NextScript />
+		<NextScript />
       </body>
     </Html>
   )
