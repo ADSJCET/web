@@ -3,7 +3,14 @@ export const projects = [
     "/projects/02.webp",
     "/projects/03.webp",
     "/projects/04.webp",
-    "/projects/05.webp"
+    "/projects/05.webp",
+    "/projects/06.webp",
+    "/projects/07.webp",
+    "/projects/08.webp",
+    "/projects/09.webp",
+    "/projects/10.webp",
+    "/projects/11.webp",
+    "/projects/12.webp",
   ];
 
 export const workshops = [
@@ -16,6 +23,13 @@ export const workshops = [
     "/workshops/w (7).png",
     "/workshops/w (8).png",
   ];
+
+export const acheivements = [
+  '/achieve/placement.webp',
+  '/achieve/S3.webp',
+  '/achieve/S1.jpg',
+  '/achieve/S5.webp',
+]
 
 export const execom = [
   {
@@ -138,7 +152,7 @@ export const execom = [
     year: "3rd Year",
     img: "/excecom/sruthi.webp",
   }
-];
+].sort(() => Math.random() - 0.5);
 
 
 export const previous = [] as typeof execom

@@ -4,14 +4,15 @@ import Image from "next/image";
 import { AT } from "../framer-div";
 import { CursorController } from "@/lib/cursor-control";
 import Link from "next/link";
+import { Button } from "../ui/button";
 
 const Downlayout = () => {
   const {setText, setDefault} = CursorController()
     return (
-      <section className="max-w-screen bg-black border-t py-5">
+      <section className="max-w-screen flex flex-col bg-black border-t py-5">
         <div className="max-w-screen-lg mx-auto flex flex-col-reverse md:flex-row items-center justify-evenly py-10">
           <div className="flex flex-col gap-4 p-10">
-            <Image className="invert w-40" src={'/adsa-only.svg'} alt="adsa logo" width={'100'} height={"100"}/>
+            <Image className="invert w-40" src={'/assets/adsa-only.svg'} alt="adsa logo" width={'100'} height={"100"}/>
             <h3>Artificial Intelligence & Data Science Students Association</h3>
           </div>
           <div onMouseEnter={setText} onMouseLeave={setDefault} className="flex gap-10 md:gap-20 text-white w-full justify-center h-20 text-3xl">
@@ -37,7 +38,11 @@ const Downlayout = () => {
             </FramerMag>
           </div>
         </div>
-        <h5 className="text-center">Made with ❤ by non-tech team</h5>
+          <Button asChild variant={"link"} className="mx-auto text-white">
+              <Link href={'https://x.com/rajatsandeepsen'}>
+                  Made with ❤ by Rajat Sandeep
+              </Link>
+          </Button>
       </section>
     );
   };

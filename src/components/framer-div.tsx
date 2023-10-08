@@ -18,7 +18,7 @@ export const TextDiv = ({className, children, ...props}: HTMLAttributes<HTMLDivE
 }
 
 
-export const AT:FC<{type: HTMLTextTags, children:string}> = ({ children, className, type }) => {
+export const AT:FC<{type: HTMLTextTags, children:string}> = ({ children, className, type, ...props }) => {
   const words = children.split(" ")
 
   const container = {
@@ -61,6 +61,7 @@ export const AT:FC<{type: HTMLTextTags, children:string}> = ({ children, classNa
       whileInView="visible"
       viewport={{ once: true  }}
       className={cn("flex justify-center flex-wrap gap-2 md:gap-3", className)}
+      {...props}
     >
       {words.map((word, i) => {
         const x = Array.from(word)

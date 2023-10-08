@@ -11,20 +11,27 @@ import {
 } from "@/components/ui/card";
 import { Space10, Space40 } from "@/components/ui/spacer";
 import { previous } from "@/data/images";
+import { CursorController } from "@/lib/cursor-control";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
 const Home = () => {
-  const collection = previous.sort(() => Math.random() - 0.5);
+  const {setDefault, setText, setLink} = CursorController()
+
+  const textEnter = () => setText()
+  const textLink = () => setLink()
+  const textLeave = () => setDefault()
+  const collection = previous //.sort(() => Math.random() - 0.5)
   return (
     <>
       
-      <Space40>
-          <AT className="justify-center flex" type="h1"> Meet The EX-Team </AT>
+      <TextDiv>
+          <AT onMouseEnter={textEnter} onMouseLeave={textLeave} className="justify-center flex" type="h1"> Meet The EX-Team </AT>
           <h3>ADSA Core Team 2022-23</h3>
-      </Space40>
-      <div className="mx-auto max-w-screen-xl px-10 masonry-2-col sm:masonry-3-col lg:p-0 md:masonry-4-col gap-10 [column-fill:_balance]">
+      </TextDiv>
+      <Space10/>
+      <div onMouseEnter={textLink} onMouseLeave={textLeave} className="mx-auto max-w-screen-xl px-10 masonry-2-col sm:masonry-3-col lg:p-0 md:masonry-4-col gap-10 [column-fill:_balance]">
         {collection.map((e, i) => (
           <Link href={e.link} key={i}>
             <Card className="mb-6 relative group" notHover>
@@ -50,7 +57,12 @@ const Home = () => {
         ))}
       </div>
       <Space40 />
-      <div className="mx-auto max-w-screen-xl flex justify-center items-center">
+      <div className="mx-auto max-w-screen-xl flex gap-10 justify-center items-center">
+        <Button variant={"secondary"} className="p-10" asChild>
+            <Link href={"/"}>
+            <ChevronLeft/> <h4>Back to Home</h4>
+            </Link>
+          </Button>
         <Button variant={"secondary"} className="p-10" asChild>
           <Link href={"/execom"}>
             <ChevronLeft />

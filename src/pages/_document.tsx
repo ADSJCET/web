@@ -3,19 +3,19 @@ import { Html, Head, Main, NextScript } from 'next/document'
 
 export const metadata: Metadata = {
 	title: {
-		default: "",
+		default: "ADSA",
 		template: "%s | ",
 	},
-	description: "Software engineer at upstash.com and founder of planetfall.io",
+	description: "Artificial Intelligence & Data Science Students Association",
 	openGraph: {
-		title: "",
+		title: "ADSA",
 		description:
-			"Software engineer at upstash.com and founder of planetfall.io",
-		url: "https://",
-		siteName: "",
+			"Artificial Intelligence & Data Science Students Association",
+		url: "https://adsjcet.vercel.app",
+		siteName: "ADSA",
 		images: [
 			{
-				url: "https:///og.png",
+				url: "https://adsjcet.vercel.app/assets/sjcet.jpg",
 				width: 1920,
 				height: 1080,
 			},
@@ -35,11 +35,27 @@ export const metadata: Metadata = {
 		},
 	},
 	twitter: {
-		title: "Chronark",
+		title: "ADSA",
 		card: "summary_large_image",
+		creator: "Rajat Sandeep",
+		creatorId: "rajatsandeepsen",
+		description: "Artificial Intelligence & Data Science Students Association",
+
 	},
 	icons: {
-		shortcut: "/favicon.png",
+		icon: [
+		  {
+			media: '(prefers-color-scheme: light)',
+			url: '/images/icon-light.png',
+			href: '/images/icon-light.png',
+		  },
+		  {
+			media: '(prefers-color-scheme: dark)',
+			url: '/images/icon.png',
+			href: '/images/icon-dark.png',
+		  },
+		],
+		shortcut: "/favicon.ico",
 	},
 };
 

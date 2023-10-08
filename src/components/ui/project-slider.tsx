@@ -7,7 +7,7 @@ import Image from "next/image";
 import { useWindowSize } from "@uidotdev/usehooks";
 
 
-export function SliderContainer({ images, reverse }: { images: string[], reverse?:boolean }) {
+export function SliderContainer({ images, reverse, autoplay }: { images: string[], reverse?:boolean, autoplay?:boolean }) {
   const {width} = useWindowSize();
   const threeOrNot = width && width > 768
 
@@ -18,11 +18,11 @@ export function SliderContainer({ images, reverse }: { images: string[], reverse
         centeredSlides={true}
         spaceBetween={60}
         loop
-        autoplay={{
+        autoplay={(!threeOrNot || autoplay) ? {
           delay: 2500,
           disableOnInteraction: false,
           reverseDirection: reverse
-        }}
+        } : false}
         modules={[Autoplay]}
         className="mySwiper w-screen"
       >
