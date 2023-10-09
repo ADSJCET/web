@@ -10,19 +10,10 @@ const CourosalGroups = () => {
     const textEnter = () => setText()
     const textLeave = () => setDefault()
     return ( <>
-        <TextDiv>
-        <AT type="h1" onMouseEnter={textEnter} onMouseLeave={textLeave} >
-          Engineering Projects
-        </AT>
-        <h3>Students Project Based Learning</h3>
-      </TextDiv>
-      <Space10/>
-      <SliderContainer autoplay images={projects} />
-      <Space40/>
 
       <TextDiv>
-        <AT type="h1" onMouseEnter={textEnter} onMouseLeave={textLeave} >Accadamic Achievements</AT>
-        <h3>Students Accadamic Achievements</h3>
+        <AT type="h1" onMouseEnter={textEnter} onMouseLeave={textLeave} >Acadamic Achievements</AT>
+        <h3>Students Acadamic Achievements</h3>
       </TextDiv>
       <Space10/>
       <SliderContainer autoplay images={acheivements} />
@@ -30,9 +21,21 @@ const CourosalGroups = () => {
 
       <TextDiv>
         <AT type="h1" onMouseEnter={textEnter} onMouseLeave={textLeave} >
-        Event & Workshops
+          Engineering Projects
         </AT>
-        <h3>Student Self Hosted Event & Workshops</h3>
+        <h3>Engineering the new Possibilities</h3>
+      </TextDiv>
+      <Space10/>
+      <SliderContainer autoplay images={projects} />
+      <Space40/>
+
+      
+
+      <TextDiv>
+        <AT type="h1" onMouseEnter={textEnter} onMouseLeave={textLeave} >
+        Events & Workshops
+        </AT>
+        <h3>Student Self Hosted Events & Workshops</h3>
       </TextDiv>
       <Space10/>
       <SliderContainer autoplay images={workshops} />

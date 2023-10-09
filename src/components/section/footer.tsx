@@ -1,5 +1,5 @@
 import { FramerMag } from "@/components/framer-mag";
-import { Github, Twitter, Instagram, Mail } from "lucide-react";
+import { Github, Twitter, Instagram, Mail, Globe2 } from "lucide-react";
 import Image from "next/image";
 import { AT } from "../framer-div";
 import { CursorController } from "@/lib/cursor-control";
@@ -18,7 +18,7 @@ const Downlayout = () => {
           <div onMouseEnter={setText} onMouseLeave={setDefault} className="flex gap-10 md:gap-20 text-white w-full justify-center h-20 text-3xl">
             <FramerMag className="w-10 h-10">
               <Link href="" className="absolute w-full h-full flex justify-center items-center">
-                <Twitter className="text-inherit"/>
+                <Globe2 className="text-inherit"/>
               </Link>
             </FramerMag>
             <FramerMag className="w-10 h-10">
@@ -27,7 +27,7 @@ const Downlayout = () => {
               </Link>
             </FramerMag>
             <FramerMag className="w-10 h-10">
-              <Link href="" className="absolute w-full h-full flex justify-center items-center">
+              <Link href="https://www.instagram.com/adsa.sjcet/" className="absolute w-full h-full flex justify-center items-center">
                 <Instagram className="text-inherit"/>
               </Link>
             </FramerMag>
@@ -40,7 +40,7 @@ const Downlayout = () => {
         </div>
           <Button onMouseEnter={setLink} onMouseLeave={setDefault} asChild variant={"link"} className="mx-auto text-white">
               <Link href={'https://x.com/rajatsandeepsen'}>
-                  Made with ❤ by Rajat Sandeep
+                  Made with ❤️ by Rajat Sandeep
               </Link>
           </Button>
       </section>

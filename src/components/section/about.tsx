@@ -31,14 +31,18 @@ const content3 = [
 "and is affiliated under APJ Abdul Kalam Technological University (KTU).",
 "The department is well equipped with modern infrastructure",
 "along with highly qualified and experienced faculty team.",
+"ADSA was proposed with the objective to organize various activities",
+"that consists of drawing the goodness and best out of our own students",
+"under the guidance of the well trained faculty members of the department."
 ];
 
 const AboutSection = () => {
   const {setDefault, setText} = CursorController()
   return (
   <>
+        <Space10/>
         <TextDiv>
-          <AT type="h1" onMouseEnter={setText} onMouseLeave={setDefault}> About AI & DS </AT>
+          <AT type="h1" onMouseEnter={setText} onMouseLeave={setDefault}> About AD Department</AT>
           <h3> Artificial Intelligence & Data Science </h3>
         </TextDiv>
         <Space10/>

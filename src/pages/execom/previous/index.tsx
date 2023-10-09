@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { AT, TextDiv } from "@/components/framer-div";
 import { Button } from "@/components/ui/button";
@@ -17,21 +17,32 @@ import Image from "next/image";
 import Link from "next/link";
 
 const Home = () => {
-  const {setDefault, setText, setLink} = CursorController()
+  const { setDefault, setText, setLink } = CursorController();
 
-  const textEnter = () => setText()
-  const textLink = () => setLink()
-  const textLeave = () => setDefault()
-  const collection = previous //.sort(() => Math.random() - 0.5)
+  const textEnter = () => setText();
+  const textLink = () => setLink();
+  const textLeave = () => setDefault();
+  const collection = previous; //.sort(() => Math.random() - 0.5)
   return (
     <>
-      
       <TextDiv>
-          <AT onMouseEnter={textEnter} onMouseLeave={textLeave} className="justify-center flex" type="h1"> Meet The EX-Team </AT>
-          <h3>ADSA Core Team 2022-23</h3>
+        <AT
+          onMouseEnter={textEnter}
+          onMouseLeave={textLeave}
+          className="justify-center flex"
+          type="h1"
+        >
+          
+          Meet The Formal Execom
+        </AT>
+        <h3>ADSA Core Team 2022-23</h3>
       </TextDiv>
-      <Space10/>
-      <div onMouseEnter={textLink} onMouseLeave={textLeave} className="mx-auto max-w-screen-xl px-10 masonry-2-col sm:masonry-3-col lg:p-0 md:masonry-4-col gap-10 [column-fill:_balance]">
+      <Space10 />
+      <div
+        onMouseEnter={textLink}
+        onMouseLeave={textLeave}
+        className="mx-auto max-w-screen-2xl px-5 masonry-2-col sm:masonry-3-col lg:p-0 md:masonry-4-col gap-5 [column-fill:_balance]"
+      >
         {collection.map((e, i) => (
           <Link href={e.link} key={i}>
             <Card className="mb-6 relative group" notHover>
@@ -42,9 +53,9 @@ const Home = () => {
                 width={400}
                 className="w-full h-auto group-hover:scale-110 transition-all duration-700"
               />
-              {e.lead && <span className="absolute top-0 left-0 w-20 h-20 flex items-end justify-center bg-gradient-to-r to-blue-600 from-teal-300 text-fuchsia-200 -rotate-45 -translate-x-10 -translate-y-10">
+              {/* {e.lead && <span className="absolute top-0 left-0 w-20 h-20 flex items-end justify-center bg-gradient-to-r to-blue-600 from-teal-300 text-fuchsia-200 -rotate-45 -translate-x-10 -translate-y-10">
                 LEAD
-              </span>}
+              </span>} */}
               <div className="absolute transition-all w-full pt-20 duration-300 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-100 bottom-0 left-0">
                 <CardContent className="whitespace-break-spaces p-3 lg:p-6">
                   <h2 className={e.lead ? "" : ""}>{e.name}</h2>
@@ -57,12 +68,12 @@ const Home = () => {
         ))}
       </div>
       <Space40 />
-      <div className="mx-auto max-w-screen-xl flex gap-10 justify-center items-center">
+      <div className="mx-auto max-w-screen-xl flex gap-5 px-5 justify-center items-center">
         <Button variant={"secondary"} className="p-10" asChild>
-            <Link href={"/"}>
-            <ChevronLeft/> <h4>Back to Home</h4>
-            </Link>
-          </Button>
+          <Link href={"/"}>
+            <ChevronLeft /> <h4>Back to Home</h4>
+          </Link>
+        </Button>
         <Button variant={"secondary"} className="p-10" asChild>
           <Link href={"/execom"}>
             <ChevronLeft />
