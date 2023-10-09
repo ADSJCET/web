@@ -15,13 +15,9 @@ import { CursorController } from "@/lib/cursor-control";
 import BeautySJCET from "@/components/section/beauty";
 import CourosalGroups from "@/components/section/courosal";
 import { Example } from "@/components/ui/Example";
+import ExecomIntro from "@/components/section/execom";
 
 export default function Home() {
-  const {setDefault, setText, setLink} = CursorController()
-
-  const textEnter = () => setText()
-  const textLeave = () => setDefault()
-  const textLink = () => setLink()
   
   return (
     <>
@@ -41,23 +37,9 @@ export default function Home() {
       <Space40/>
       
 
-      <TextDiv>
-        <AT type="h1" > Core Team </AT>
-        <h3>ADSA Core team</h3>
-      </TextDiv>
-      <div className="max-w-screen-lg mx-10 h-96 mt-10 text-center md:mx-auto mb-40" >
-        {/* <Image src={"/assets/sjcet.jpg"} className="w-full rounded-md" height={1000} width={1000} alt="" /> */}
-        <Link href="/execom">
-          <div onMouseEnter={textLink} onMouseLeave={textLeave} className="rounded-md flex justify-center w-full h-full items-center p-18 bg-no-repeat bg-cover bg-center" 
-            style={{
-              backgroundImage: "linear-gradient(360deg, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 70%, rgba(0, 0, 0, 0.4) 80%, rgba(0, 0, 0, 0.2) 100%), url('/assets/sjcet.jpg')"
-            }}>
-            <AT type="h1">Meet Our Dream Team</AT>
-          </div>
-        </Link>
-      </div>
-
-
+      <Space40/>
+      <ExecomIntro/>
+      <Space40/>
 
       <Downlayout />
     </>
