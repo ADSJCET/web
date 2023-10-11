@@ -1,6 +1,11 @@
 
-![Screenshot (40)](https://github.com/ADSJCET/web/assets/93584596/d1bd7258-eb03-4e8a-8c32-2db136154cc1)
+![Screenshot (40)](https://github.com/ADSJCET/web/assets/93584596/f6a68b98-833b-4386-8bbf-06934779a852)
+
+![Screenshot (41)](https://github.com/ADSJCET/web/assets/93584596/06741e02-810a-4325-be77-e93cc4aca033)
+
+![Screenshot (42)](https://github.com/ADSJCET/web/assets/93584596/1c891218-f336-4460-ade7-5e99e452ff6c)
 # Official Website of ADSA Sjcet Palai
+
 Artificial Intelligence & Data Science Students Association SJCET Palai
 
 ## Contributors
