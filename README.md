@@ -4,9 +4,9 @@
 Artificial Intelligence & Data Science Students Association SJCET Palai
 
 ## Contributors
-By [@rajatsandeepsen](https://github.com/rajatsandeepsen)
+[@rajatsandeepsen](https://github.com/rajatsandeepsen)
 
-By [@Joswin_Shogi](https://github.com/joswinshogi)
+[@Joswin_Shogi](https://github.com/joswinshogi)
 
 ## Contribute
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
